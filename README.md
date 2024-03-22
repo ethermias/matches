@@ -25,6 +25,6 @@ A few things going on here
 
 We’re setting up our first service - server - and telling it to build using the Dockerfile we just defined.
 We’re saving the backend files to volume. More on this later.
-We’ll serve up our application with uvicorn, and host the backend on localhost:8888.
+We’ll serve up our application with uvicorn, and host the backend on localhost:8000.
 All other environment variables will be taken from our .env file.
 And finally - lets build our docker container and get our server up and running.
