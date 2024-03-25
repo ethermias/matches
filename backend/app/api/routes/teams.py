@@ -1,39 +1,28 @@
 from typing import List
-import csv
+import json
+import os
 
 from fastapi import APIRouter
 
 router = APIRouter()
-teams = [
-        "Arsenal",
-        "Aston Villa",
-        "Brentford",
-        "Brighton & Hove Albion",
-        "Burnley",
-        "Chelsea",
-        "Crystal Palace",
-        "Everton",
-        "Leeds United",
-        "Leicester City",
-        "Liverpool",
-        "Manchester City",
-        "Manchester United",
-        "Newcastle United",
-        "Norwich City",
-        "Southampton",
-        "Tottenham Hotspur",
-        "Watford",
-        "West Ham United",
-        "Wolverhampton Wanderers"
-    ]
-
-
 
 @router.get("/")
 async def get_all_teams() -> List[dict]:
- 
-    return [ { key: teams[key-1]} for key in range(1, 21) ]
+    print('********************************************************')
+    current_directory = os.getcwd()
+    if os.path.exists('/backend/data/teams/teams.json'):
+        print("File exists.")
+    else:
+        print("File does not exist.")
 
-@router.get("/{id}")
-async def get_all_players(id: int) -> List[dict]:
-    return [ { k: teams[id] + "-" + str(k)} for k in range(1, 26) ]
+    print("Current directory:", current_directory)
+    with open('/backend/data/teams/teams.json') as file:
+        data = json.load(file)
+    return data
+   
+
+@router.get("/{abbr}")
+async def get_all_players(abbr: str) -> List[dict]:
+    with open('/backend/data/roasters/' + abbr + '.json') as file:
+        data = json.load(file)
+    return data
