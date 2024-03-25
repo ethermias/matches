@@ -2,19 +2,24 @@ from util import read_json_file, write_json_file
  
 def main():
     teams = read_json_file('teams/teams.json')
+    
     for i in teams:
         read_file_path = "roaster_org/" + i["abbr"]+ ".json"
         file = read_json_file(read_file_path)
         players = []
-        for p in file["athletes"][1:3]:
+        for p in file["athletes"]:
             player = { 
                 "id": p["id"],
-                'jersey': p["jersey"], 
                 'name' : p["shortName"], 
                 'position' : p["position"]["abbreviation"],
-                'displayName': p["displayName"], 
-                'citizen': p["citizenshipCountry"]["abbreviation"]
+                'displayName': p["displayName"]
             }
+          
+            if p.get("jersey") is not None:
+                player.update({ 'jersey' : p["jersey"] })
+            if p.get("citizenshipCountry") is not None:
+                player.update({'citizen': p["citizenshipCountry"]["abbreviation"]})
+     
             if p.get("statistics") is not None:
                 playerStats = { 
                     'stats': {
@@ -24,7 +29,6 @@ def main():
                 }
                 player.update(playerStats)
             players.append(player)
-            print(players)
         file_path = "roasters/" + i["abbr"]+ ".json"
         write_json_file(file_path, players)
 
