@@ -28,3 +28,7 @@ We’re saving the backend files to volume. More on this later.
 We’ll serve up our application with uvicorn, and host the backend on localhost:8000.
 All other environment variables will be taken from our .env file.
 And finally - lets build our docker container and get our server up and running.
+
+https://gist.github.com/nntrn/ee26cb2a0716de0947a0a4e9a157bc1c
+
+url1 = "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/teams/"
