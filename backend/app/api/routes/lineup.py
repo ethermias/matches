@@ -10,5 +10,5 @@ router = APIRouter()
 
 @router.post("/")
 async def create_lineup(lineup: Lineup):
-    # Save to S3 or Database 
-    return {"sr": lineup}
+    
+    return { "lineup": lineup }
