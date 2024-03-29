@@ -1,0 +1,32 @@
+[
+  { "id": "349", "name": "Bournemouth", "nick": "Bournemouth", "abbr": "BOU" },
+  { "id": "359", "name": "Arsenal", "nick": "Gunners", "abbr": "ARS" },
+  { "id": "362", "name": "Aston Villa", "nick": "Aston Villa", "abbr": "AVL" },
+  { "id": "337", "name": "Brentford", "nick": "Brentford", "abbr": "BRE" },
+  { "id": "331", "name": "Brighton", "nick": "Seagulls", "abbr": "BHA" },
+  { "id": "379", "name": "Burnley", "nick": "Burnley", "abbr": "BUR" },
+  { "id": "363", "name": "Chelsea", "nick": "Blues", "abbr": "CHE" },
+  { "id": "384", "name": "Crystal Palace", "nick": "Eagles", "abbr": "CRY" },
+  { "id": "368", "name": "Everton", "nick": "Toffees", "abbr": "EVE" },
+  { "id": "370", "name": "Fulham", "nick": "Fulham", "abbr": "FUL" },
+  { "id": "364", "name": "Liverpool", "nick": "Reds", "abbr": "LIV" },
+  { "id": "301", "name": "Luton", "nick": "Hatters", "abbr": "LTN" },
+  { "id": "382", "name": "Man City", "nick": "Sky Blues", "abbr": "MNC" },
+  { "id": "360", "name": "Man United", "nick": "Red Devils", "abbr": "MAN" },
+  { "id": "361", "name": "Newcastle", "nick": "Magpies/Toon", "abbr": "NEW" },
+  {
+    "id": "393",
+    "name": "Nottm Forest",
+    "nick": "Nottingham F.",
+    "abbr": "NFO"
+  },
+  {
+    "id": "398",
+    "name": "Sheffield Utd",
+    "nick": "Sheffield Utd",
+    "abbr": "SHU"
+  },
+  { "id": "367", "name": "Tottenham", "nick": "Spurs", "abbr": "TOT" },
+  { "id": "371", "name": "West Ham", "nick": "Hammers/Iron", "abbr": "WHU" },
+  { "id": "380", "name": "Wolves", "nick": "Wolves", "abbr": "WOL" }
+]
