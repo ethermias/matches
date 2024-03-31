@@ -35,6 +35,32 @@ url1 = "https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/teams/"
 
 
 ## Deploy to AWS
+## EC2
+// start here 
+sudo yum update -y
+sudo yum clean all
+# sudo yum install epel-release
+
+sudo yum install docker -y
+sudo yum update  -y
+sudo systemctl start docker
+sudo systemctl enable docker
+docker --version
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+
+sudo yum install git -y
+git --version
+git clone https://github.com/ethermias/matches.git
+cd matches
+git clone https://github.com/ethermias/matchesui.git
+cd matchesui
+change API_URL
+sudo docker-compose up -d --build
+sudo docker-compose logs -f -t --tail 30
+sudo docker-compose down
+
 Steps and Commands:
 
 (This assumes you have 3 servers up and running)
