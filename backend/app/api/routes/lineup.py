@@ -1,11 +1,12 @@
 from fastapi import APIRouter
 from pydantic import BaseModel, conint
 from typing import List
+from datetime import datetime
 
 class Lineup(BaseModel):
     squad: List[conint(ge=0)]
     tag: str = None
-    submission_time: str = None
+    submittedAt: str = None
 
 router = APIRouter()
 
@@ -13,7 +14,7 @@ router = APIRouter()
 async def create_lineup(lineup: Lineup):
     current_time = datetime.now().isoformat()
 
-    lineup.submission_time = current_time
+    lineup.submittedAt = current_time
     lineup_json = lineup.json()
 
     # Write JSON string to file

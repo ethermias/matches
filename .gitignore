@@ -5,3 +5,5 @@ __pycache__/
 
 roaster_org/
 team_org/
+
+.DS_Store
