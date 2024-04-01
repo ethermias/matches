@@ -7,8 +7,6 @@ services:
       dockerfile: ./matchesui/Dockerfile
     ports:
       - "80:80"
-    networks:
-      - matches-network
   server:
     build:
       context: ./backend
