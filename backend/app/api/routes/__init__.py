@@ -6,6 +6,7 @@ from app.api.routes.schedule import router as schedule_router
 from app.api.routes.rules import router as rules_router
 from app.api.routes.changelog import router as changelog_router
 from app.api.routes.leaders import router as leaders_router
+from app.api.routes.user import router as user_router
 
 
 router = APIRouter()
@@ -17,3 +18,4 @@ router.include_router(schedule_router, prefix="/schedule", tags=["schedule"])
 router.include_router(rules_router, prefix="/rules", tags=["rules"])
 router.include_router(changelog_router, prefix="/changelog", tags=["changelog"])
 router.include_router(leaders_router, prefix="/leaders", tags=["leaders"])
+router.include_router(user_router, prefix="/user", tags=["user"])
