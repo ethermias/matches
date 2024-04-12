@@ -1,5 +1,5 @@
 version: '3.8'
- 
+
 services:
   app:
     build:
@@ -9,6 +9,9 @@ services:
       - "80:80"
     depends_on:
       - server
+    networks:
+      - host
+
   server:
     build:
       context: ./backend
@@ -22,7 +25,9 @@ services:
       - 8000:8000
     depends_on:
       - db
- 
+    networks:
+      - host 
+
   db:
     image: postgres:13-alpine
     volumes:
@@ -31,6 +36,12 @@ services:
       - ./backend/.env
     ports:
       - 5432:5432
- 
+    networks:
+      - host
+
+networks:
+  host:
+    driver: host
+
 volumes:
-    postgres_data:
+  postgres_data:
