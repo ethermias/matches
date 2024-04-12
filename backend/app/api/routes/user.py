@@ -27,7 +27,7 @@ async def sign_in_user(user: User):
         data = []
     exists = any((d['email'] == user.email or d['userName'] == user.userName) for d in data)
     log_user(LogUser(user=user, exists=exists))
-    return { "user": user, "user_valid": exists }
+    return { "user": user, "isValid": exists }
 
 @router.post("/signup")
 async def sign_up_user(user: User):
@@ -43,4 +43,4 @@ async def sign_up_user(user: User):
         data.append(user.dict())
         with open(filename, 'w') as file:
             json.dump(data, file, indent=4)
-    return { "user": user, "user_created": not exists }
+    return { "user": user, "isValid": not exists }
