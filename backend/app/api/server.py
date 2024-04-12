@@ -12,7 +12,7 @@ def get_application():
         CORSMiddleware,
         allow_origins=[    
             "http://localhost",
-            "http://localhost:3000"
+            "http://localhost:8000"
         ],
         allow_credentials=True,
         allow_methods=["*"],
