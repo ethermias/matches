@@ -4,18 +4,14 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.core import config, tasks  
  
 from app.api.routes import router as api_router
-
+ 
+ 
 def get_application():
     app = FastAPI(title=config.PROJECT_NAME, version=config.VERSION)
  
     app.add_middleware(
         CORSMiddleware,
-        allow_origins=[    
-            "http://localhost",
-            "http://localhost:8000",
-            "http://127.0.0.1:8000",
-            "http://localhost:3000"
-        ],
+        allow_origins=["*"],
         allow_credentials=True,
         allow_methods=["*"],
         allow_headers=["*"],
