@@ -53,9 +53,8 @@ docker-compose --version
 sudo yum install git -y
 git --version
 git clone https://github.com/ethermias/matches.git
+cd matches
 git clone https://github.com/ethermias/matchesui.git
-cd matchesui
-change API_URL
 sudo docker-compose up -d --build
 sudo docker-compose logs -f -t --tail 30
 sudo docker-compose down
