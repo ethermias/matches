@@ -9,7 +9,6 @@ services:
       - "80:80"
     depends_on:
       - server
-    network_mode: host
 
   server:
     build:
@@ -24,7 +23,6 @@ services:
       - 8000:8000
     depends_on:
       - db
-    network_mode: host 
 
   db:
     image: postgres:13-alpine
@@ -34,7 +32,6 @@ services:
       - ./backend/.env
     ports:
       - 5432:5432
-    network_mode: host 
 
 volumes:
   postgres_data:
