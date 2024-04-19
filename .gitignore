@@ -8,4 +8,6 @@ team_org/
 
 .DS_Store
 
+user_tags_log.json
+user_tags.json
 matchesui
