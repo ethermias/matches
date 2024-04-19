@@ -1,14 +1,14 @@
 version: '3.8'
 
 services:
-  app:
-    build:
-      context: .
-      dockerfile: ./matchesui/Dockerfile
-    ports:
-      - "80:80"
-    depends_on:
-      - server
+  # app:
+  #   build:
+  #     context: .
+  #     dockerfile: ./matchesui/Dockerfile
+  #   ports:
+  #     - "80:80"
+  #   depends_on:
+  #     - server
 
   server:
     build:
